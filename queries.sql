@@ -12,6 +12,6 @@ SELECT * FROM `payments` WHERE paymentDate LIKE '%-%-05' OR paymentDate LIKE '%-
 
 
 -- 3-from “customers” table. Write a query to get the fifth-highest credit limit of the customers who (live in the USA and their phone number contains 5555).
-SELECT customerName,phone, MAX(creditLimit) AS Maxcredit FROM `customers` WHERE country='USA' AND phone LIKE '%5555%'
+SELECT customerName,phone, creditLimit FROM `customers` WHERE country='USA' AND phone LIKE '%5555%'
 ORDER BY creditLimit
-LIMIT 5;
+LIMIT 1 OFFSET 4;
