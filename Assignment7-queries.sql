@@ -25,4 +25,5 @@ offices ON offices.officeCode =  employees.officeCode;
 SELECT customers.customerName ,orders.orderNumber,orders.status ,SUM(orderdetails.quantityOrdered * orderdetails.priceEach) AS orderTotal 
 FROM customers JOIN orders JOIN orderdetails
 ON customers.customerNumber = orders.customerNumber 
-AND orders.orderNumber = orderdetails.orderNumber;
+AND orders.orderNumber = orderdetails.orderNumber
+GROUP BY customers.customerName;
